@@ -11,6 +11,35 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Meyawo main styles -->
     <link rel="stylesheet" href="assets/css/meyawo.css">
+    <script type="text/javascript">
+        function validate(){
+        var username=document.getElementById("uname")
+        var email=document.getElementById("uemail")
+        var comment=document.getElementById("comment")
+        if(username.value.trim()=="")
+        {
+            alert("no blank values allowed");
+            return false;
+        }
+        else if(email.value.trim()==""){
+            alert("no blank values allowed");
+            return false;
+        }
+        else if(comment.value.trim()=="")
+        {
+            alert("enter some messages");
+            return false;
+        }
+        else if(comment.value.trim().length<15)
+        {
+            alert("write more than 10 words");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    </script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -292,7 +321,7 @@
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
             <!-- contact form -->
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form col-md-10 col-lg-8 m-auto">
+            <form onsubmit="return validate()" action="https://api.web3forms.com/submit" method="POST" class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
                     <input type="hidden" name="access_key" value="2b89f4e2-0cde-46ef-b992-c7ed2a4b7042">
                     <div class="form-group col-sm-6">
