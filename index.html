@@ -16,7 +16,7 @@
         var username=document.getElementById("uname")
         var email=document.getElementById("uemail")
         var comment=document.getElementById("comment")
-        var usernameRegex = /^[A-Za-z]+$/;
+        var usernameRegex = /^[A-Za-z]+$/; 
         if(username.value.trim()=="")
         {
             alert("no blank values allowed");
@@ -41,7 +41,7 @@
         }
         else if(comment.value.trim().length<15)
         {
-            alert("write more than 10 words");
+            alert("write more than 10 characters");
             return false;
         }
         else{
@@ -334,16 +334,16 @@
                 <div class="form-row">
                     <input type="hidden" name="access_key" value="2b89f4e2-0cde-46ef-b992-c7ed2a4b7042">
                     <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" name="username" placeholder="Your Name" required>
+                        <input id="uname" type="text" size="50" class="form-control" name="name" placeholder="Your Name" >
                     </div>
                     <div class="form-group col-sm-6">
-                        <input type="email" class="form-control" name="email" placeholder="Enter Email" requried>
+                        <input id="uemail" type="text" class="form-control" name="email" placeholder="Enter Email" >
                     </div>
                     <div class="form-group col-sm-12">
                         <textarea name="message" id="comment" rows="6" class="form-control"
                             placeholder="Write Something"></textarea>
                     </div>
-                    <div class="form-group col-sm-12 mt-3">
+                    <div  class="form-group col-sm-12 mt-3">
                         <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
                     </div>
                 </div>
