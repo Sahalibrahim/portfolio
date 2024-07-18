@@ -16,13 +16,22 @@
         var username=document.getElementById("uname")
         var email=document.getElementById("uemail")
         var comment=document.getElementById("comment")
+        var usernameRegex = /^[A-Za-z]+$/;
         if(username.value.trim()=="")
         {
             alert("no blank values allowed");
             return false;
         }
+        else if(!usernameRegex.test(username.value.trim())){
+            alert("Username must contain only letters");
+            return false;
+        }
         else if(email.value.trim()==""){
             alert("no blank values allowed");
+            return false;
+        }
+        else if(!email.value.includes("@")){
+            alert("Email must contain '@'");
             return false;
         }
         else if(comment.value.trim()=="")
